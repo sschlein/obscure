@@ -26,20 +26,20 @@ class Obscure
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $obscuredParameter = 'id')
     {
         $hashids = new Hashids(config('obscure.salt'), config('obscure.length'), config('obscure.alphabet'));
 
         // decode form request hashs
-        if($request->request->has('id'))
+        if($request->request->has($obscuredParameter))
         {
-            $request->request->add(['id' => $hashids->decode($request->request->get('id'))[0]]);
+            $request->request->add([$obscuredParameter => $hashids->decode($request->request->get($obscuredParameter))[0]]);
         }
 
         // decode route hashs
-        if ($this->route->parameter('id'))
+        if ($this->route->parameter($obscuredParameter))
         {
-            $this->route->setParameter('id', $hashids->decode($this->route->parameter("id" ))[0]);
+            $this->route->setParameter($obscuredParameter, $hashids->decode($this->route->parameter($obscuredParameter))[0]);
         }
 
         return $next($request);
