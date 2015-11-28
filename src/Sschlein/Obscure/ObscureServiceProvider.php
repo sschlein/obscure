@@ -7,6 +7,7 @@
  * @package Obscure
  */
 
+use Blade;
 use Illuminate\Support\ServiceProvider;
 
 class ObscureServiceProvider extends ServiceProvider
@@ -26,6 +27,10 @@ class ObscureServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishConfig();
+
+        Blade::directive('obscure', function($expression) {
+            return "<?php echo Obscure::encode($expression); ?>";
+        });
     }
 
     /**
