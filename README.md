@@ -46,10 +46,10 @@ In your `config\app.php` file, add the obscure service provider to `providers` a
     // ...
 ```
 
-Set a salt hash in you `.env` file to generate unique hashs.
+Set a salt hash in your `.env` file to generate unique hashs.
 
 ```
-OBSCURE_SALT=you-unique-phrase
+OBSCURE_SALT=your-unique-phrase
 ```
 
 ### Add the middleware to your Kernel
