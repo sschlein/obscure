@@ -69,7 +69,16 @@ protected $routeMiddleware = [
 <a name="usage" />
 ## Usage
 
-Obscure looks for routes or request parameters with the name `id`. If this parameter is present, it gets decoded to the id and can be used without applications changes.
+By default, Obscure looks for routes or request parameters with a parameter named `id`. 
+To modify this parameter, add it as a middleware parameter like this:
+
+```php
+Route::get('/obscure/{user_id}', function ($user_id) {
+    return "ID: " . $id; // returns a number
+})->middleware('obscure:user_id');
+```
+
+If this parameter is present, it gets decoded to the id and can be used without applications changes.
 
 ```php
 // http://exampleapplication.com/obscure/ALnLzW
