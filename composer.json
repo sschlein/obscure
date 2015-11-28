@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sschlein\\Obscure\\": "src/"
+            "Sschlein\\Obscure\\": "src/Sschlein/Obscure/"
         }
     }
 }
