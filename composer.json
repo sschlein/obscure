@@ -1,6 +1,6 @@
 {
     "name": "sschlein/obscure",
-    "description": "Obscure IDs in the URLs of you Laravel 5 app",
+    "description": "Obscure IDs in requests and URLs of you Laravel 5 app",
     "license": "MIT",
     "keywords": [],
     "homepage": "http://github.com/sschlein/obscure",
@@ -29,8 +29,8 @@
         "guzzlehttp/guzzle": ">=4.0"
     },
     "autoload": {
-        "psr-0": {
-            "Sschlein\\Obscure": "src/"
+        "psr-4": {
+            "Sschlein\\Obscure\\": "src/"
         }
     }
 }

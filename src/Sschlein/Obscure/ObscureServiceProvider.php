@@ -68,7 +68,8 @@ class ObscureServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function registerFacade() {
+    public function registerFacade()
+    {
         $this->app->booting(function()
         {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
