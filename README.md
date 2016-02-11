@@ -1,5 +1,5 @@
 # Obscure
-## Why should your users know how much customers you have?
+## Hide IDs from URLs and forms
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
 [![Build Status](https://travis-ci.org/sschlein/obscure.svg)](https://travis-ci.org/sschlein/obscure)
